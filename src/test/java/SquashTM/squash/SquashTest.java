@@ -24,16 +24,13 @@ public class SquashTest {
 		
 		if (browser.equals("chrome")) {
 		//	System.setProperty("webdriver.chrome.driver", "C:\\Installation\\driver\\chromedriver.exe");
-			driver = new ChromeDriver();}
-		
+			driver = new ChromeDriver();
+		}
 	}
 	
 	@Test
 	public void SquashTest() throws InterruptedException{
 
-	//	System.setProperty("webdriver.chrome.driver", "C:/Installation/driver/chromedriver.exe");
-		
-		WebDriver driver = new ChromeDriver();
 		driver.get("http://192.168.102.95:8089/squash/login");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
