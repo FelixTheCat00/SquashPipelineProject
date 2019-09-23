@@ -20,13 +20,12 @@ public class SquashTest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://192.168.102.95:8089/squash/login");
-		Thread.sleep(3000);
 		driver.manage().window().maximize();
-		
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("admin");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("admin");
 		driver.findElement(By.xpath("//*[@id=\"login-form-button-set\"]/input")).click();
-		
+		Thread.sleep(3000);
 		driver.close();
 	}
 
