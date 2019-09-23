@@ -1,22 +1,37 @@
 package SquashTM.squash;
 
 
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 
 
 public class SquashTest {
+	WebDriver driver;
+	String browser =System.getProperty("browser").toLowerCase().trim();
+	
+	@Before
+	public void setupTest() {
+		
+		
+		if (browser.equals("chrome")) {
+		//	System.setProperty("webdriver.chrome.driver", "C:\\Installation\\driver\\chromedriver.exe");
+			driver = new ChromeDriver();}
+		
+	}
 	
 	@Test
 	public void SquashTest() throws InterruptedException{
 
-		System.setProperty("webdriver.chrome.driver", "C:/Installation/driver/chromedriver.exe");
+	//	System.setProperty("webdriver.chrome.driver", "C:/Installation/driver/chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://192.168.102.95:8089/squash/login");
